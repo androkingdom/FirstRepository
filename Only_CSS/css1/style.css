@@ -1,0 +1,14 @@
+*{
+    padding: auto;
+    margin: auto;
+}
+.red{
+    border: 2px solid blue;
+    color: black;
+    background-image: url("/Only_CSS/bg_image.jpg");
+}
+.one{
+    border: 2px solid blue;
+    color: white;
+    background-image: url("/Only_CSS/bg2.jpg");
+}

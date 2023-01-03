@@ -1,0 +1,23 @@
+.navi {
+    width: min-content;
+    background-color: black;
+    color: white;
+}
+
+.foot {
+    background-color: red;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.para {
+    background-image: url("/Only_CSS/css_box/bg2.jpg");
+    color: white;
+}
+
+.abou,
+.hd {
+    color: red;
+    background-color: black;
+    border: 2px solid rgba(238, 255, 0, 0.352);
+}
