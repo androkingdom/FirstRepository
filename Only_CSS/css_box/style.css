@@ -22,3 +22,9 @@
     background-color: black;
     border: 2px solid rgba(238, 255, 0, 0.352);
 }
+/* For back button in about.html */
+.back{
+    color: red;
+    background-color: black;
+    border: 2px solid rgba(238, 255, 0, 0.352);
+}
