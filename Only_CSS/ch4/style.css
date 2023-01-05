@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+div{
+    background-color: black;
+    color: white;
+}
+div li {
+    display: inline-block;
+}
