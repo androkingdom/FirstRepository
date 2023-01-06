@@ -1,11 +1,44 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-div{
+
+.navbar {
+    background-color: black;
+}
+
+div li label a {
+    text-decoration: none;
+    color: white;
+    font-size: 1cm;
+}
+
+div li {
+    display: inline-block;
+    margin: 3vh 2vh;
+}
+
+.backbutt button a {
+    text-decoration: none;
+    background-color: darkblue;
+    color: whitesmoke;
+}
+
+.hd {
+    background-color: black;
+    color: red;
+}
+.abou {
     background-color: black;
     color: white;
 }
-div li {
-    display: inline-block;
+.footr{
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+}
+.content {
+    border: 2px solid red;
+    background-image: url("/Only_CSS/ch4/bg2.jpg");
+    color: red;
 }
