@@ -7,7 +7,12 @@ li {
     padding: 5vh;
 }
 .videos {
-    margin: auto;
+    border: 5px blue;
+    border-style: double;
+}
+iframe{
+    height: auto;
+    width: auto;
 }
 .navi {
     font-size: 3vw;
@@ -15,4 +20,25 @@ li {
     height: auto;
     padding: 2vh;
     background-color: aquamarine;
+}
+header {
+    position: sticky;
+    top: 0;
+}
+.last {
+    text-align: end;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.aboutvideo {
+    border: 2px solid red;
+    height: fit-content;
+    text-align: center;
+}
+.end {
+    text-align: end;
+    text-align: center;
+    background-color: crimson;
+    color: white;
 }
