@@ -26,7 +26,6 @@ header {
     top: 0;
 }
 .last {
-    text-align: end;
     text-align: center;
     background-color: black;
     color: white;
@@ -37,7 +36,6 @@ header {
     text-align: center;
 }
 .end {
-    text-align: end;
     text-align: center;
     background-color: crimson;
     color: white;
