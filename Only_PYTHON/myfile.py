@@ -17,3 +17,20 @@
 #         print("*",end=" ")
 #     print()
 
+# b = 1
+# while b <= 10:
+#     a = 1 
+#     for i in range(b):
+#         print(a,end=" ")
+#         a += 1
+#     b += 1
+#     print()
+
+# a = 0
+# b = 0
+# for i in range(5):
+#     for j in range(b):
+#         print(a,end=" ")
+#         a += 1
+#     b += 1
+#     print()
