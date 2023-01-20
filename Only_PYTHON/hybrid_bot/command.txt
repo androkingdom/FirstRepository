@@ -1,0 +1,3 @@
+/help : for short help
+/exit : for exit or quit 
+/calculate : calculate
