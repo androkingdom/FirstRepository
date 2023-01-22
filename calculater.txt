@@ -1,5 +1,0 @@
-* => multiply
-/ => divison
-+ => addition
-- => subtraction
-** => exponential
