@@ -61,31 +61,31 @@ while True:
                 style(choice)
                 style(bot)
                 # for draw 
-                if word2 == word:
+                if word2 == cho:
                     print("Draw")
                     chance -= 1
                 # for snake
-                elif word == "S" or word == "s" and word2 == "W":
+                elif cho == "S" and word2 == "W":
                     print("YOU WINS")
                     points += 1
                     chance -= 1
-                elif word == "S" or word == "s" and word2 == "G":
+                elif cho == "S" and word2 == "G":
                     print("YOU LOSE")
                     chance -= 1
                 # for water  
-                elif word == "W" or word == "w" and word2 == "G":
+                elif cho == "W" and word2 == "G":
                     print("YOU WINS")
                     points += 1
                     chance -= 1
-                elif word == "W" or word == "w" and word2 == "S":
+                elif cho == "W" and word2 == "S":
                     print("YOU LOSE")
                     chance -= 1
                 # for gun
-                elif word == "G" or word == "g" and word2 == "S":
+                elif cho == "G" and word2 == "S":
                     print("YOU WINS")
                     points += 1
                     chance -= 1
-                elif word == "G" or word == "g" and word2 == "W":
+                elif cho == "G" and word2 == "W":
                     print("YOU LOSE")
                     chance -= 1
             except:
