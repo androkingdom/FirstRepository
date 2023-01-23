@@ -34,3 +34,25 @@
 #         a += 1
 #     b += 1
 #     print()
+
+# def style(x):
+#     l = len(x)
+#     for i in range(l+7):
+#         print("-",end="")
+#     print()
+#     print(f"| => {x} |")
+#     l = len(x)
+#     for i in range(l+7):
+#         print("-",end="")
+#     print()
+
+import random as rn
+def comp():
+    global coman
+    coman = {"S":"Snake","W":"Water","G":"Gun"}
+    rn_key = rn.choice(["S","W","G"])
+    rn_val = coman[rn_key]
+    return rn_val
+while True:
+    bot = comp()
+    print(bot)
