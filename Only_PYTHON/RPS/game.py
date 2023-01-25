@@ -21,7 +21,7 @@ b = random.randrange(1,5)
 if a not in dic:
     print("Your : Enter Invaild Input")
 
-if b not in dic:
+elif b not in dic:
     print("Comp. : Enter Invaild Input")
 
 else:
