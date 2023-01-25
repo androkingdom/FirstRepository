@@ -19,10 +19,10 @@ a = int(input("Enter : "))
 b = random.randrange(1,5)
 
 if a not in dic:
-    print("You Enter Invaild Input")
+    print("Your : Enter Invaild Input")
 
 if b not in dic:
-    print("Comp. Enter Invaild Input")
+    print("Comp. : Enter Invaild Input")
 
 else:
     print()
