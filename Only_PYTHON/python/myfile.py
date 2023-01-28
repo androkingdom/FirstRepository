@@ -46,13 +46,28 @@
 #         print("-",end="")
 #     print()
 
-import random as rn
-def comp():
-    global coman
-    coman = {"S":"Snake","W":"Water","G":"Gun"}
-    rn_key = rn.choice(["S","W","G"])
-    rn_val = coman[rn_key]
-    return rn_val
-while True:
-    bot = comp()
-    print(bot)
+# a = "a"
+# l = ["harry","sam","anshul"]
+# for i in l:
+#     if a in i:
+#         print(i)
+#     else:
+#         print("not found")
+
+# -x + 1 ,x < 0			|x| = -x , x < 0
+# 0 ,x = 0				
+# x + 1 ,x > 0			|x| = x , x > 0
+
+# at x = 0:
+# 	L.H.L:
+# 		lim f(X) = lim -x + 1
+# 		x--> 0^-   x--> 0^-
+# 				 = 0 + 1
+# 				 = 1
+# 	!! similary for R.H.L !! 
+# Importing urllib request module in the program  
+
+
+from urllib.request import urlopen
+with urlopen("https://open.spotify.com/album/5HwDqY57GHF4LhBvXUrilS") as response:
+   html = response.read()
