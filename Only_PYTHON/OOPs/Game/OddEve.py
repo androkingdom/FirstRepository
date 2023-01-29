@@ -36,8 +36,8 @@ else:
 if TossWin == 1:
     BatOrBall = input(": ")
 elif TossWin ==2:
-    BatOrBall = input(": ")
-
+    BatOrBall = rn.choice(["Bat","Ball"])
+    print(BatOrBall)
 
 class PlayerBat:
     def __init__(self,Number1,Numebr2):
@@ -48,4 +48,5 @@ class PlayerBat:
 
 if BatOrBall == "Bat":
     PlayerScore = int(input("Enter Number : "))
-    Plyr = PlayerBat(1,2)
+    BotScore = rn.randint(1,11)
+    Plyr = PlayerBat(PlayerScore,BotScore)
