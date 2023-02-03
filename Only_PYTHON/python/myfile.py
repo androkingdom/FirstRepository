@@ -53,30 +53,3 @@
 #         print(i)
 #     else:
 #         print("not found")
-
-# -x + 1 ,x < 0			|x| = -x , x < 0
-# 0 ,x = 0				
-# x + 1 ,x > 0			|x| = x , x > 0
-
-# at x = 0:
-# 	L.H.L:
-# 		lim f(X) = lim -x + 1
-# 		x--> 0^-   x--> 0^-
-# 				 = 0 + 1
-# 				 = 1
-# 	!! similary for R.H.L !! 
-# Importing urllib request module in the program  
-
-
-# from urllib.request import urlopen
-# with urlopen("https://open.spotify.com/album/5HwDqY57GHF4LhBvXUrilS") as response:
-#    html = response.read()
-
-response = openai.Image.create_edit(
-  image=open("sunlit_lounge.png", "rb"),
-  mask=open("mask.png", "rb"),
-  prompt="A sunlit indoor lounge area with a pool containing a flamingo",
-  n=1,
-  size="1024x1024"
-)
-image_url = response['data'][0]['url']
