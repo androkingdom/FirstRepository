@@ -12,6 +12,7 @@ def useoftimer(x):
 lis = ["M","H","S"]
 dic = {"M":60,"H":60*60,"S":1}
 
+engine.setProperty('rate',145)
 engine.say("Sir! Enter , M For Minute , H For Hour ,And, S For Second")
 engine.runAndWait()
 
