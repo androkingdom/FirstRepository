@@ -11,11 +11,12 @@ def player(location):
     mixer.music.load(location)
     mixer.music.set_volume(0.7)
     mixer.music.play()
-   
-    stopper = input("Enter 'e' to stop : ")
-    if stopper == 'e':
-        mixer.music.stop()
-            
-    else:
-        print("Some error ocurred")
+    print("Playing....")
+    while True:
+        stopper = input("Enter 'e' to stop : ")
+        if stopper == 'e':
+            mixer.music.stop()
+            break 
+        else:
+            print("Some error ocurred")
     
