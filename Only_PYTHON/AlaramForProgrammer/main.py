@@ -1,6 +1,7 @@
 import time
 import pyttsx3
 import os
+from pygame import mixer
 engine = pyttsx3.init()
 
 use = "Timer For : "
@@ -38,5 +39,7 @@ engine.say("Sir! Timer Is Stoped!!")
 engine.runAndWait()
 os.remove("all_alram_records.txt")
 
-from playsound import playsound
-playsound("AlaramForProgrammer/download.mp3")
+mixer.init()
+mixer.music.load("Only_PYTHON\\AlaramForProgrammer\\download.mp3")
+mixer.music.set_volume(0.7)
+mixer.music.play()
