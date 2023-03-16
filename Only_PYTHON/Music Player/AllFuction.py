@@ -5,7 +5,7 @@ def mytimer(lim):
         a += 1
         time.sleep(1)
 
-def timeplayer(location):
+def player(location):
     from pygame import mixer
     mixer.init()
     mixer.music.load(location)

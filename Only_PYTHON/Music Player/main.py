@@ -20,7 +20,7 @@ while Good:
     print("Playing....")
     print(f"Music - {music_dic[user_song]}")
     loc = f"{music_dic[user_song]}"
-    ch.timeplayer(loc)
+    ch.player(loc)
     print("Enter \"q\" to stop Player\nEnter \"a\" for play another song")
     query = input("Enter : ")
     if query == "q":
