@@ -67,16 +67,3 @@
 #     for k in range(5-i):
 #             print('#',end='')
 #     print()
-
-
-txt = '    '
-txt2 = ''
-for i in range(1,5):
-    print(f'{txt}{i}')
-    print('---------')
-    if i > 1  :
-        for j in range(5-i):
-            txt2 += ' '
-            print(f'{txt2}{i}')
-            print('@@@@@@@@@@@')
-    print()
