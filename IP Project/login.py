@@ -28,7 +28,7 @@ try:
 
             if fn.unique(UserName) != False:
                 print(f"Your LoginId : {LoginId}")
-                with open("C:\\Users\\andro\\OneDrive\\Desktop\\Project\\IP Project\\user.csv","at") as file:
+                with open("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv","at") as file:
                     file.write(f"{UserName},{LoginId}\n")
                     
             else:

@@ -17,7 +17,7 @@ def LoginId():
 
 # Function - 2 ==> This Function Prevent Repetition Of User Name
 import pandas as pd
-df = pd.read_csv("C:\\Users\\andro\\OneDrive\\Desktop\\Project\\IP Project\\user.csv",names=["UserName","LoginId"])
+df = pd.read_csv("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv",names=["UserName","LoginId"])
 
 def unique(matchcase):
     for row in df.itertuples():
