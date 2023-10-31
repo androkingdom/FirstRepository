@@ -1,4 +1,7 @@
 # Function - 1 ==> This Function Create Login Id
+import pandas as pd
+
+
 def LoginId():
     import random
     letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -8,16 +11,18 @@ def LoginId():
     for i in range(2):
         login_id += random.choice(letters)
     for j in range(2):
-        numbers = random.randint(0,10)
+        numbers = random.randint(0, 10)
         login_id += str(numbers)
     for j in range(2):
-        numbers = random.randint(0,10)
+        numbers = random.randint(0, 10)
         login_id += str(numbers)
     return login_id
 
+
 # Function - 2 ==> This Function Prevent Repetition Of User Name
-import pandas as pd
-df = pd.read_csv("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv",names=["UserName","LoginId"])
+df = pd.read_csv("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv", names=[
+                 "UserName", "LoginId"])
+
 
 def unique(matchcase):
     for row in df.itertuples():

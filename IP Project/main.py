@@ -12,7 +12,7 @@ print(f"\nConnection Status : {connection.is_connected()}\n")
 
 try:
     print(":--------- Select Tables ---------:")
-    
 
-except Exception as e :
+
+except Exception as e:
     print(e)
