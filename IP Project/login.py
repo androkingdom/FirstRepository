@@ -9,7 +9,7 @@ connection = sqLtor.connect(
     database="project"
 )
 
-print(connection.is_connected())
+print(f"Connection Status : {connection.is_connected()}")
 
 try:
     print(":---------- Enter ----------:")
@@ -21,6 +21,9 @@ try:
         case 1:
             UserName = input("Enter User Name : ")
             LoginId = input("Enter LoginId : ")
+            df = pd.read_csv("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv", names=[
+                 "UserName", "LoginId"])
+            for 
 
         case 2:
             UserName = input("Enter User Name : ")
@@ -30,7 +33,6 @@ try:
                 print(f"Your LoginId : {LoginId}")
                 with open("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv", "at") as file:
                     file.write(f"{UserName},{LoginId}\n")
-
             else:
                 print("Enter Another Name !!!")
 

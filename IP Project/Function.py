@@ -23,9 +23,16 @@ def LoginId():
 df = pd.read_csv("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv", names=[
                  "UserName", "LoginId"])
 
-
 def unique(matchcase):
     for row in df.itertuples():
         lst_of_data = list(row)
         if lst_of_data[1] == matchcase:
             return False
+
+# Function - 2 ==> This Function Give User Name
+def login():
+    for i in df.itertuples():
+        print(i[1])
+    print()
+
+login()
