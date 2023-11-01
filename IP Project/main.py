@@ -1,22 +1,29 @@
-# import pandas as pd
-# import mysql.connector as sqLtor
-# import Function as fn
+import pandas as pd
+import mysql.connector as sqLtor
+import Function as fn
 
-# connection = sqLtor.connect(
-#     host="localhost",
-#     user="root",
-#     passwd="1234",
-#     database="project"
-# )
-# print(f"\nConnection Status : {connection.is_connected()}\n")
+connection = sqLtor.connect(
+    host="localhost",
+    user="root",
+    passwd="1234",
+    database="project"
+)
 
-# try:
-#     print(":--------- Select Tables ---------:")
+# if __name__ == "__main__":
+try:
+    while True:
+            dic_of_choice = {1 : "Insert", 2 : "Revert", 3 : "Delete"}
+            print("---------------------")
+            for choices in dic_of_choice:
+                print(f"{choices} - {dic_of_choice[choices]}")
+            print("4 - close")
+            choice = int(input("Enter choice : "))
+            print("---------------------")
+            print()
+            print(":--------- Select Tables ---------:")
 
 
-# except Exception as e:
-#     print(e)
 
 
-while True:
-    import login
+except Exception as e:
+    print(e)
