@@ -23,7 +23,7 @@ try:
             LoginId = input("Enter LoginId : ")
             df = pd.read_csv("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv", names=[
                  "UserName", "LoginId"])
-            for 
+            # for 
 
         case 2:
             UserName = input("Enter User Name : ")
