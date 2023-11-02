@@ -1,6 +1,7 @@
 import pandas as pd
 import mysql.connector as sqLtor
 import Function as fn
+import login as log
 
 connection = sqLtor.connect(
     host="localhost",
@@ -12,16 +13,11 @@ connection = sqLtor.connect(
 # if __name__ == "__main__":
 try:
     while True:
-            dic_of_choice = {1 : "Insert", 2 : "Revert", 3 : "Delete"}
-            print("---------------------")
-            for choices in dic_of_choice:
-                print(f"{choices} - {dic_of_choice[choices]}")
-            print("4 - close")
-            choice = int(input("Enter choice : "))
-            print("---------------------")
-            print()
+            cursor = connection.cursor()
             print(":--------- Select Tables ---------:")
+            print(log.User_Name)
 
+            
 
 
 

@@ -1,6 +1,14 @@
 import pandas as pd
-df = pd.read_csv("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv", names=[
-                 "UserName", "LoginId"])
+import mysql.connector as sqLtor
+
+df = pd.read_csv("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv", names=["UserName", "LoginId"])
+
+sample_conn = sqLtor.connect(
+    host = "localhost",
+    user = "root",
+    passwd = "1234",
+    database="project"
+)
 
 # Function - 1 ==> This Function Create Login Id
 def LoginId():
@@ -23,17 +31,27 @@ def LoginId():
 # Function - 2 ==> This Function Prevent Repetition Of User Name
 
 def unique(matchcase):
-    global df
     for row in df.itertuples():
         lst_of_data = list(row)
-        if lst_of_data[1] == matchcase:
+        if str(lst_of_data[1]).capitalize() == str(matchcase).capitalize() or str(lst_of_data[1]) == "".capitalize():
             return False
 
 # Function - 2 ==> This Function Login Using UserName And LoginID
 def login(UserName,LoginID):
-    global df
     for i in df.itertuples():
         if UserName == i[1] and LoginID == i[2]:
             return True
+        
+# Function - 3 ==> This Function Used To Make Table In Sql
+def create_table(TableName):
+    cursor = sample_conn.cursor()
+    query = f"CREATE TABLE {TableName}"
+    cursor.execute(query)
 
-login('root',34)
+# Funtion - 4 ==> This Function Used To Find Whether user.csv Is Empty Or Not
+def CsvIsEmpty():
+    return True
+
+# Funtion - 5 ==> This Function Used Specify The Length Of UserName
+def usernamecheaker(username):
+    pass
