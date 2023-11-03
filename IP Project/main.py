@@ -14,12 +14,8 @@ connection = sqLtor.connect(
 try:
     while True:
             cursor = connection.cursor()
+            cursor.execute("CREATE TABLE IF NOT EXISTS EMPLOYEE (LOGINID VARCHAR(8), FIRST_NAME VARCHAR(30),LAST_NAME VARCHAR(30),DOB DATE,DEPT_NO VARCHAR(4),SALARY DECIMAL(10,2));")
             print(":--------- Select Tables ---------:")
-            print(log.User_Name)
-
-            
-
-
-
+            # dict_of_lst = 
 except Exception as e:
     print(e)

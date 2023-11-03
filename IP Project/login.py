@@ -2,7 +2,10 @@ import pandas as pd
 import mysql.connector as sqLtor
 import Function as fn
 
+
 if __name__ == "__main__":
+    fn.create_database()
+
     connection = sqLtor.connect(
         host="localhost",
         user="root",
@@ -31,7 +34,9 @@ if __name__ == "__main__":
                         print("!!!Please First Login!!!")
                         
                     else:
-                        User_Name = input("Enter User Name : ")
+                        User_Name1 = input("Enter User Name : ")
+                        User_Name = User_Name1.replace(" ","")
+
                         Login_Id = input("Enter LoginId : ")
                         CheckName = fn.login(User_Name,Login_Id)
                         if CheckName == True:
@@ -45,15 +50,19 @@ if __name__ == "__main__":
                     print("|       SignUp       |")
                     print("+--------------------+")
 
-                    UserName = input("Enter User Name : ")
+                    UserName1 = input("Enter User Name : ")
+                    UserName = UserName1.replace(" ","")
                     LoginId = fn.LoginId()
                     
-                    if fn.unique(UserName) != False:
-                        print(f"Your LoginId : {LoginId}")
-                        with open("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv", "at") as file:
-                            file.write(f"{UserName},{LoginId}\n")
+                    if fn.AlphaInUserName(UserName) == True:
+                        if fn.unique_(UserName) != False:
+                            print(f"Your LoginId : {LoginId}")
+                            with open("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\user.csv", "at") as file:
+                                file.write(f"{UserName},{LoginId}\n")
+                        else:
+                            print("Enter Another Name !!!")
                     else:
-                        print("Enter Another Name !!!")
+                        print("User Cannot Be Assign")
                 case 3:
                     break
                 case _ :

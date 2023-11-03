@@ -29,11 +29,12 @@ def LoginId():
 
 
 # Function - 2 ==> This Function Prevent Repetition Of User Name
-
-def unique(matchcase):
+def unique_(matchcase):
+    global df
     for row in df.itertuples():
         lst_of_data = list(row)
-        if str(lst_of_data[1]).capitalize() == str(matchcase).capitalize() or str(lst_of_data[1]) == "".capitalize():
+        user_name = lst_of_data[1]
+        if str(user_name).capitalize() == str(matchcase).capitalize():
             return False
 
 # Function - 2 ==> This Function Login Using UserName And LoginID
@@ -53,5 +54,32 @@ def CsvIsEmpty():
     return True
 
 # Funtion - 5 ==> This Function Used Specify The Length Of UserName
-def usernamecheaker(username):
-    pass
+def AlphaInUserName(username):
+    letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    total = 0
+    for letter in letters :
+        if letter in username:
+            if len(str(username)) >= 4 and len(str(username)) < 8:
+                return True
+
+# Function - 6 ==> This Function Create Database If Not Exist
+def create_database(DatabaseName = "IPProjectDB"):
+    try:
+        myconnection = sqLtor.connect( host = 'localhost' , user = 'root', password = '1234')
+        cursor = myconnection.cursor()
+        cursor.execute(f'CREATE DATABASE IF NOT EXISTS {DatabaseName}')
+        print ("Database created successfully")
+        myconnection.close()
+    except Exception as e:
+        print(e)
+
+# Function - 7 ==> This Function Delete Database
+def drop_database(DatabaseName = "IPProjectDB"):
+    try:
+        myconnection = sqLtor.connect( host = 'localhost' , user = 'root', password = '1234')
+        cursor = myconnection.cursor()
+        cursor.execute(f'DROP DATABASE {DatabaseName}')
+        print ("Database created deletd")
+        myconnection.close()
+    except Exception as e:
+        print(e)
