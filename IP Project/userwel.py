@@ -1,15 +1,18 @@
 import pandas as pd
 import mysql.connector as sqLtor
-from sqlalchemy import create_engine
 import Function as fn
 import login as log
 
+connection = sqLtor.connect(
+    host="localhost",
+    user="root",
+    passwd="1234",
+    database="project"
+)
+
 try:
     while True:
-            dbengine1 = create_engine("mysql+pymysql://root:1234@localhost/project")
-            connection = dbengine1.connect()
-            conn = sqLtor.connect(host="localhost",user="root",passwd="1234",database="project")
-            cursor = conn.cursor()
+            cursor = connection.cursor()
             cursor.execute("CREATE TABLE IF NOT EXISTS EMPLOYEE (LOGINID VARCHAR(8), FIRST_NAME VARCHAR(30),LAST_NAME VARCHAR(30),DOB DATE,DEPT_NO VARCHAR(4),SALARY DECIMAL(10,2));")
 
             print(":--------- Select Choice ---------:")
@@ -24,8 +27,7 @@ try:
                  case 1 : 
                       pass
                  case 2 :
-                      df = pd.read_sql("Select * from Employee",connection)
-                    #   a = df.empty()
+                      pass 
                  case 3 : 
                       pass
                  case 4 :

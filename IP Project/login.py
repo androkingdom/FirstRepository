@@ -42,6 +42,8 @@ if __name__ == "__main__":
                         if CheckName == True:
                             print("Successfully Logined")
                             print()
+                            with open("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\recent_login.txt","wt") as f:
+                                f.write(User_Name)
                             import main 
                         else:
                             print("Wrong LoginID or UserName")

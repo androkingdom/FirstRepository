@@ -83,3 +83,9 @@ def drop_database(DatabaseName = "IPProjectDB"):
         myconnection.close()
     except Exception as e:
         print(e)
+
+# Function - 8 ==> This Function Returen Active UserName
+def get_recent_user_name():
+    with open("C:\\Users\\andro\\OneDrive\\Desktop\\MYPROJECTS\\IP Project\\recent_login.txt","rt") as f:
+        user_name = f.read()
+        return user_name
