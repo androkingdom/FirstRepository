@@ -51,7 +51,8 @@ def create_table(TableName):
 
 # Funtion - 4 ==> This Function Used To Find Whether user.csv Is Empty Or Not
 def CsvIsEmpty():
-    return True
+    if df.empty:
+        return True
 
 # Funtion - 5 ==> This Function Used Specify The Length Of UserName
 def AlphaInUserName(username):

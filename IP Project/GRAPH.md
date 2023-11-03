@@ -17,3 +17,14 @@
 **EmployeeID** : - 
 -
 `If you have a specific purpose for analyzing data based on individual employees, you can create graphs based on the "EmployeeID" field.`
+
+<!-- sample table
+CREATE TABLE Sales (
+    SaleID INT PRIMARY KEY,
+    Date DATE,
+    ProductName VARCHAR(50),
+    Category VARCHAR(30),
+    Quantity INT,
+    UnitPrice DECIMAL(10, 2),
+    TotalPrice DECIMAL(10, 2)
+); -->

@@ -19,13 +19,18 @@ try:
             print(":--------- ------------- ---------:")
             choice = int(input('Enter Choice Number : '))
             print(":--------- ------------- ---------:")
+            print()
             
             match choice :
                  case 1 : 
                       pass
                  case 2 :
                       df = pd.read_sql("Select * from Employee",connection)
-                    #   a = df.empty()
+                      if df.empty:
+                           print("No Data Found!!")
+                           print()
+                      else:
+                           print(df)  
                  case 3 : 
                       pass
                  case 4 :
