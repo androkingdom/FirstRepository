@@ -1,45 +1,42 @@
-import time
-import pyttsx3
-import os
+import threading
 from pygame import mixer
-engine = pyttsx3.init()
-
-use = "Timer For : "
-
-def useoftimer(x):
-    with open("all_alram_records.txt","w") as fileo:
-        fileo.write(x)
+import function  as funct
 
 lis = ["M","H","S"]
 dic = {"M":60,"H":60*60,"S":1}
-
-engine.setProperty('rate',145)
-engine.say("Sir! Enter , M For Minute , H For Hour ,And, S For Second")
-engine.runAndWait()
-
+print()
+print("----------------------")
+print("Sir! Enter \nM For Minute \nH For Hour \nS For Second")
+print("----------------------")
 tim = input("Enter : ")
-timer = tim.upper()
-if timer not in lis:
-    print("Wrong Input")
-    raise ValueError
+timer_ = tim.upper()
+try:
+    if timer_ not in lis:
+        print("Wrong Input")
+        raise ValueError
+except:
+    print("Wrong Command")
 
 else:
-    use+=timer
-    engine.say("Sir! Enter , Time!")
-    engine.runAndWait()
+    use = "Timer For - "
+    use+=timer_
+    print("----------------------")
+    print("Sir! Enter Time")
+    print("----------------------")
     timing = int(input("Enter : "))
-    RealTime = dic[timer]*timing
-    use+=str(timing)
-    useoftimer(use)
-    print("Time Started !!")
-    for i in range(RealTime):
-        time.sleep(1)
-    
-engine.say("Sir! Timer Is Stoped!!")
-engine.runAndWait()
-os.remove("all_alram_records.txt")
 
-mixer.init()
-mixer.music.load("Only_PYTHON\\AlaramForProgrammer\\download.mp3")
-mixer.music.set_volume(0.7)
-mixer.music.play()
+    RealTime = dic[timer_]*timing
+    use+=str(timing)
+    with open("all_alram_records.txt","w") as fileo:
+        fileo.write(use)
+    try:
+        t2 = threading.Thread(target=funct.player,args=(RealTime,))
+        t1 = threading.Thread(target=funct.timer, args=(RealTime,))
+    
+        t1.start()
+        t2.start()
+    
+        t1.join()
+        t2.join()
+    except:
+        print("Error")

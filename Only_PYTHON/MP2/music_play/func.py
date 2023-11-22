@@ -13,6 +13,7 @@ list_of_files = []
 approx_audio_length = 0
 working = True
 choice = ""
+length_of_music = 0
 
 # All Function
 
@@ -20,8 +21,11 @@ choice = ""
 def playmusic(loc):
     global choice
     global working
+    global length_of_music
     mixer.init()
     mixer.music.load(loc)
+    length_of_music = mixer.Sound(loc)
+    print("length - ",length_of_music.get_length())
     mixer.music.set_volume(10)
     mixer.music.play()
     print('Enter "s" to stop\nEnter "p" to pause\nEnter "r" to resume')
@@ -53,7 +57,8 @@ def list_maker(location_of_folder=working_dir):
     list_of_files = os.listdir(location_of_folder)
     for file in list_of_files:
         if file.endswith(".mp3"):
-            print(f"{file_number} : {file}")
+            filename = str(file).replace(".mp3","")
+            print(f"{file_number} : {filename}")
             file_dic_infolder[file_number] = file
             file_number += 1
 

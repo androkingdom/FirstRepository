@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Inknut+Antiqua:wght@300&family=Poppins:ital,wght@1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index :unset;
+}
+
+.navbar img {
+    height: 9vh;
+}
+
+.bg-image {
+    position: absolute;
+    width: 50vw;
+}

@@ -24,7 +24,7 @@ def style2(x):
     for i in range(l-1):
         print(" =",end="")
 
-#  _____
+#  ______
 # |     |
 #  -----
 def style3(x):
@@ -33,7 +33,7 @@ def style3(x):
     for i in range(l):
         print("_",end="")
     print()
-    print(f"|{x}|")
+    print(f"/{x}/")
     print(" ",end="")
     for i in range(l):
         print("-",end="")
