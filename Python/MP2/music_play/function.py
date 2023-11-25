@@ -12,7 +12,7 @@ def player(song_location):
     from pygame import mixer
     mixer.init()
     mixer.music.load(song_location)
-    mixer.music.set_volume(0.7)
+    mixer.music.set_volume(10)
     mixer.music.play()
 
 def timer(howmuch):

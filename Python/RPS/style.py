@@ -16,13 +16,14 @@ def style(x):
 # ||     ||
 #  = = = =
 def style2(x):
-    l = len(x)
-    for i in range(l-1):
+    l = len(x) 
+    for i in range(l):
         print(" =",end="")
     print()
-    print(f"||{x}||")
-    for i in range(l-1):
+    print(f"//    {x}    //")
+    for i in range(l):
         print(" =",end="")
+    print()
 
 #  ______
 # |     |
@@ -37,5 +38,9 @@ def style3(x):
     print(" ",end="")
     for i in range(l):
         print("-",end="")
+    print()
 
-style3("hello")
+
+# import random
+# chances = random.choice([i for i in range(1,11)])
+# print(chances)

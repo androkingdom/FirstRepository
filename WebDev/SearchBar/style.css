@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.row1{
+    list-style: none;
+    display: flex;
+    column-gap: 10vw;
+}
+.row2{
+    list-style: none;
+    display: flex;
+    column-gap: 5vw;
+}
+
+nav h2 {
+    display: flex;
+}
