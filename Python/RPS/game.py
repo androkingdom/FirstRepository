@@ -1,5 +1,5 @@
 import function as func
-import datetime
+import pandas as pd
 
 print("-------------------------")   #Seprator
 
@@ -20,7 +20,9 @@ print('1 --> Rock \n2 --> Paper \n3 --> Scissors')
 print()
 
 NetScore = 0
-HistoryDict = {}
+HistoryDict = {"Level Selected" : [] , "Score" : [] , "TimeStamp" : []}
+CurrentTime = func.timestamp_now()
+
 try:
     for RoundNumber in range(NumberOfRound):
         print("=================")
@@ -28,7 +30,6 @@ try:
         print("=================")
         match level_selection :
             case 1:
-                HistoryDict["LevelSelected"] = LevelDict[level_selection]
                 print("============================")
                 print("You have selected Hard Level")
                 print("============================")
@@ -39,7 +40,6 @@ try:
                 func.result(selection,comp)
 
             case 2:
-                HistoryDict["LevelSelected"] = LevelDict[level_selection]
                 print("============================")
                 print("You have selected Easy Level")
                 print("============================")
@@ -50,7 +50,6 @@ try:
                 func.result(selection,comp)
 
             case 3:
-                HistoryDict["LevelSelected"] = LevelDict[level_selection]
                 print("==============================")
                 print("You have selected Normal Level")
                 print("==============================")
@@ -61,5 +60,18 @@ try:
                 func.result(selection,comp)
 
     print(f"Net Score => {NetScore}")
+    
+    Lebel = LevelDict[level_selection]
+    HistoryDict["Level Selected"].append(Lebel)
+    HistoryDict["Score"].append(NetScore)
+    HistoryDict["TimeStamp"].append(CurrentTime)
+
+    with open("Recored.txt","at") as filo:
+        filo.write("{")
+        filo.write(f"Level Selected': [{Lebel}], 'Score': [{NetScore}], 'TimeStamp': [{CurrentTime}]")
+        filo.write("}\n")
+
 except Exception as e:
     print(e)
+df = pd.DataFrame(HistoryDict)
+print(df)

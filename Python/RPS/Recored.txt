@@ -1,0 +1,3 @@
+{Level Selected': [Hard], 'Score': [1], 'TimeStamp': [2023-11-26 13:16:21]}
+{Level Selected': [Easy], 'Score': [1], 'TimeStamp': [2023-11-26 13:16:37]}
+{Level Selected': [Normal], 'Score': [1], 'TimeStamp': [2023-11-26 13:17:19]}
