@@ -39,8 +39,3 @@ def style3(x):
     for i in range(l):
         print("-",end="")
     print()
-
-
-# import random
-# chances = random.choice([i for i in range(1,11)])
-# print(chances)
