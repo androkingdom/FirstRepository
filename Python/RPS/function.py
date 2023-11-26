@@ -122,3 +122,15 @@ def insert_data(TableName,dbs,Value_):
     cursor.execute(query,values)
     myconnection.commit()
     myconnection.close()
+
+def retrive_db_as_df(dbs):
+    myconnection = sqLtor.connect( host = 'localhost' , user = 'root', password = '1234',port="3306" , database=dbs)
+    query = "SELECT LEVEL_SELECTED , SUM(scores) as Total_Score from history GROUP by level_selected;"
+    df = pd.read_sql(query,myconnection)
+    return df
+
+def delete_history(tbname , dbs):
+    myconnection = sqLtor.connect( host = 'localhost' , user = 'root', password = '1234',port="3306" , database=dbs)
+    cursor = myconnection.cursor()
+    query = f"TRUNCATE TABLE {tbname}"
+    cursor.execute(query)
