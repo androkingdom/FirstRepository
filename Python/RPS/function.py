@@ -88,12 +88,11 @@ def NormalLevel(usersel):
     OutputDict["Score"] = Score
     return OutputDict
 
-def create_database(DatabaseName = "IPProjectDB"):
+def create_database(DatabaseName):
     try:
         myconnection = sqLtor.connect( host = 'localhost' , user = 'root', password = '1234',port="3306")
         cursor = myconnection.cursor()
         cursor.execute(f'CREATE DATABASE IF NOT EXISTS {DatabaseName}')
-        print ("Database created successfully")
         myconnection.close()
     except Exception as e:
         print(e)
@@ -102,15 +101,24 @@ def create_table(TableName,dbs):
     myconnection = sqLtor.connect( host = 'localhost' , user = 'root', password = '1234',port="3306" , database=dbs)
     cursor = myconnection.cursor()
     query = f'''CREATE TABLE IF NOT EXISTS {TableName} (
-        LEVEL_SELECTED VARCHAR(5)
-        SCORES INT
+        LEVEL_SELECTED VARCHAR(10),
+        SCORES INT,
         TIMESTAMP DATETIME
-    )'''
+    );'''
     cursor.execute(query)
-    print("Table created successfully.")
     myconnection.close()
 
 def timestamp_now():
         now = datetime.datetime.now()
         formatted_now = now.strftime("%Y-%m-%d %H:%M:%S")
         return formatted_now
+
+def insert_data(TableName,dbs,Value_):
+    myconnection = sqLtor.connect( host = 'localhost' , user = 'root', password = '1234',port="3306" , database=dbs)
+    cursor = myconnection.cursor()
+    query = f"""INSERT INTO {TableName} (LEVEL_SELECTED,SCORES,TIMESTAMP) VALUES(%s
+    ,%s,%s)"""
+    values = tuple(Value_)
+    cursor.execute(query,values)
+    myconnection.commit()
+    myconnection.close()

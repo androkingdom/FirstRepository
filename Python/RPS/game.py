@@ -20,7 +20,7 @@ print('1 --> Rock \n2 --> Paper \n3 --> Scissors')
 print()
 
 NetScore = 0
-HistoryDict = {"Level Selected" : [] , "Score" : [] , "TimeStamp" : []}
+HistoryDict = {}
 CurrentTime = func.timestamp_now()
 
 try:
@@ -62,16 +62,12 @@ try:
     print(f"Net Score => {NetScore}")
     
     Lebel = LevelDict[level_selection]
-    HistoryDict["Level Selected"].append(Lebel)
-    HistoryDict["Score"].append(NetScore)
-    HistoryDict["TimeStamp"].append(CurrentTime)
-
-    with open("Recored.txt","at") as filo:
-        filo.write("{")
-        filo.write(f"Level Selected': [{Lebel}], 'Score': [{NetScore}], 'TimeStamp': [{CurrentTime}]")
-        filo.write("}\n")
+    HistoryDict["Level Selected"] = (Lebel)
+    HistoryDict["Score"] = (NetScore)
+    HistoryDict["TimeStamp"] = (CurrentTime)
 
 except Exception as e:
     print(e)
-df = pd.DataFrame(HistoryDict)
-print(df)
+func.create_database("Recoreds")
+func.create_table("History","Recoreds")
+func.insert_data("History","Recoreds",list(HistoryDict.values()))
