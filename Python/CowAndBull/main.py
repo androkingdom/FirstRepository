@@ -39,6 +39,7 @@ def bull_and_cow(scode,gcode):
 
 SecretCode = SecretCodeGen()
 
+print("----------Game Started----------")
 Guesser = input("Guess Code : ")
 BulCowDict = bull_and_cow(SecretCode,Guesser)
 
