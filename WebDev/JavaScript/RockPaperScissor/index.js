@@ -1,6 +1,5 @@
 StartOrNot = confirm("RockPaperScissor\n--------------------\nCommand :-\n1. Rock\n2. Paper\n3.Scissor\n--------------------\nClick 'OK' To Start The Game")
-
-if (StartOrNot == true){
+    if (StartOrNot == true){
     let npc = (Math.floor(Math.random() * 3)) + 1
     let meaning = {1:"Rock" ,2:"Paper",3:"Scissor"}
     let UserCondition = {
@@ -16,6 +15,8 @@ if (StartOrNot == true){
 
     let result = UserCondition[User][npc]
     confirm(`User : ${meaning[User]}\nComputer : ${meaning[npc]}\nResult : ${result}`)
+
+    document.getElementById('Score').innerHTML = result
 }
 
 
