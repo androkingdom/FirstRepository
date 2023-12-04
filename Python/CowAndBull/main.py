@@ -5,8 +5,9 @@ def SecretCodeGen():
     number_list = [str(i) for i in range(1,10)]
     for Digit in range(4):
         Number = random.choice(number_list)
+        IndexOfNumber = number_list.index(Number)
         Code += Number
-        number_list.remove(Number)
+        RemoveNumber = number_list.pop(IndexOfNumber)
     return Code
 
 def dict_maker(strtodic):
@@ -37,7 +38,6 @@ def bull_and_cow(scode,gcode):
     return {"bull" : bulls , "cow" : cows}
 
 SecretCode = SecretCodeGen()
-print(SecretCode)
 
 Guesser = input("Guess Code : ")
 BulCowDict = bull_and_cow(SecretCode,Guesser)
