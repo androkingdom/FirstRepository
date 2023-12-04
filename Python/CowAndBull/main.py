@@ -58,3 +58,4 @@ while Guesser != Code:
     print("=================")
 
 print(f"Code Broken --> {Code}")
+print(f"Chance Taken --> {Score}")
