@@ -1,76 +1,60 @@
+# Library To Be Used
 import random
 
-def SecretCodeGen():
-    try:    
-        Code = ""
-        number_list = [str(i) for i in range(1,10)]
-        for Digit in range(4):
-            IndexOfNumber = number_list.index(random.choice(number_list))
-            RemoveNumber = number_list.pop(IndexOfNumber)
-            Code += RemoveNumber
-        return Code
-    except Exception as e:
-        print(e)
+# Global Variable
+Code = ""
+Bulls = 0
+Cows = 0
+Guesser = ""
+Score = 0
 
+# Functions To Be Used :-
+# Function-1
+def ForDigitCode():
+    global Code
+    number_list = [str(i) for i in range(1,10)]
+    for digit_used in range(4):
+        digit = random.choice(number_list)
+        Code += digit
+        number_list.remove(digit)
 
-# def dict_maker(strtodic):
-#     create_dict = {}
-#     key = 1
-#     for i in strtodic:
-#         create_dict[key] = i
-#         key += 1
-# return create_dict
+# Function-2
+def BullAndCow(GuessCode , SecretCode):
+    global Bulls
+    global Cows
+    Bulls = 0
+    Cows = 0
+    list_of_secret_code = list(SecretCode)
+    list_of_guess_code = list(GuessCode)
+    for secret_code_digit in list_of_secret_code:
+        for guess_code_digit in list_of_guess_code:
+            if secret_code_digit == guess_code_digit:
+                if list_of_secret_code.index(secret_code_digit) == list_of_guess_code.index(guess_code_digit):
+                    Bulls += 1
+                else:
+                    Cows += 1
+# Function-3
+def IsRepeted(ListOfGuessCode:list ) -> list:
+    SetOfCode = set(ListOfGuessCode)
+    if len(SetOfCode) < len(ListOfGuessCode) :
+        return True
 
-def bull_and_cow(scode,gcode):
-    try:
-        bulls = 0
-        cows = 0
-        lst_scode = list(scode)
-        lst_gcode = list(gcode)
+# Working :-
+ForDigitCode() # Function Call To Generate Code
 
-        if len(lst_scode) != len(lst_gcode):
-            return f"length of secret code : {len(lst_scode)}"
-
-        for i in lst_scode:
-            for j in lst_gcode:
-                if lst_scode.index(i) == lst_gcode.index(j):
-                    if i == j:
-                        bulls += 1
-                    elif i != j:
-                        cows += 1
-
-        return {"bull" : bulls , "cow" : cows}
-    except Exception as e:
-        print(e)
-
-SecretCode = SecretCodeGen()
-print(SecretCode)
-
-print("----------Game Started----------")
-Guesser = input("Guess Code : ")
-BulCowDict = bull_and_cow(SecretCode,Guesser)
-
-try:
-    if len(Guesser) != 4:
-        print(f"Code Length : {len(SecretCode)}")
-        
-    for BullCow in BulCowDict:
-        print(f"{BullCow} : {BulCowDict[BullCow]}")
-except Exception as e:
-    print(e)
-
-while Guesser != SecretCode:
-    try:
-        print("=========================")
-        Guesser = input("Guess Code : ")
-        BulCowDict = bull_and_cow(SecretCode,Guesser)
-
-
-        for BullCow in BulCowDict:
-            print(f"{BullCow} : {BulCowDict[BullCow]}")
-    except Exception as e:
-        print(e)
+print("-----------Game Started-----------")
+while Guesser != Code:
+    Guesser = input("Guess Code : ")
+    if IsRepeted(list(Guesser)):
+        print("Duplicate Number Not Allowed")
+        continue
+    elif len(Guesser) != 4:
+        print("Please Enter Four Digits Only")
         continue
 
-print("Code Broken!!")
-print(f"Code --> {SecretCode}")
+    BullAndCow(Guesser , Code)
+    Score += 1
+    print(f"Bull : {Bulls}\nCow : {Cows}")
+    print("=================")
+
+print(f"Code Broken --> {Code}")
