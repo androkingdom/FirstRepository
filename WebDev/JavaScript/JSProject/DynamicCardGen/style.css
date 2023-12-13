@@ -18,7 +18,6 @@
 }
 
 .box img {
-    border: 2px solid white;
     border-radius: 7px;
     height: 80px;
 }
@@ -34,4 +33,10 @@
     height: 80px;
     justify-content:end;
     align-items: end;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
