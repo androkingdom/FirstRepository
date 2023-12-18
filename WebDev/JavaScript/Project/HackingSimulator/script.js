@@ -5,12 +5,12 @@ async function adder(p, s, text) {
 
         let timer = setInterval(() => {
             s.append(".")
-        }, 1000)
+        }, 1500)
 
         setTimeout(() => {
             clearInterval(timer)
             resolve(1)
-        }, 3000)
+        }, 5000)
 
     })
     return await promise
