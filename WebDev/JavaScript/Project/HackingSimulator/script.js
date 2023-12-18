@@ -14,10 +14,12 @@ async function adder(p, s, text) {
 
     })
     return await promise
-
+    
 }
 
 let place = document.querySelector(".place")
+let start = document.getElementsByTagName("button")
+let sideBoxes = document.getElementsByClassName("code")
 
 let span1 = document.createElement("span")
 let span2 = document.createElement("span")
@@ -33,4 +35,11 @@ async function init() {
     await adder(place, span5, "Cleaning up")
 }
 
-init()
+
+start[0].addEventListener("click",()=>{
+    start[0].remove()
+    init()
+    
+})
+
+
