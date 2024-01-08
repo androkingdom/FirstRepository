@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Oswald:wght@500&family=Poppins:wght@300;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Anonymous Pro', monospace;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: hsl(352.58deg 100% 80.98%);
+    background: linear-gradient(to bottom right, hsl(352.58deg 100% 80.98%) 0%, hsl(352.58deg 100% 80.98%) 40%, hsl(352.58deg 100% 80.98%) 52%, hsl(352.58deg 100% 80.98%) 65%, rgba(233, 97, 251, 1) 95%);
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 240px;
+    height: 450px;
+    background-color: white;
+    box-shadow: 10px 10px 20px rgb(136 77 102), -10px 10px 20px rgb(136 77 102);
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.img img {
+    width: 240px;
+    object-fit: contain;
+}
+
+.profilePic {
+    position: relative;
+    top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 70px;
+    height: 80px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 10px rgb(109, 109, 110), -1px 1px 10px rgb(109, 109, 110);
+}
+
+.profilePic img {
+    width: 50px;
+    object-fit: contain;
+}
+
+.info {
+    position: relative;
+    top: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.name span {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.follows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.followers,
+.following {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blue-bold {
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(0 150 255);
+}
+
+.light-small {
+    font-size: 15px;
+    font-weight: lighter;
+    color: rgb(203 193 181);
+}
+
+.followMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    background-color: hsl(47.69deg 100% 55.1%);
+    padding: 10px 50px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bolder;
+}
