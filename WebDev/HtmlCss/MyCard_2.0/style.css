@@ -63,7 +63,7 @@ body {
 }
 
 .profilePic img {
-    width: 50px;
+    width: 75px;
     object-fit: contain;
 }
 
@@ -121,6 +121,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    top: 10px;
 }
 
 .btn {
@@ -131,4 +133,5 @@ body {
     border-radius: 20px;
     font-size: 15px;
     font-weight: bolder;
+    box-shadow: 1px 1px 10px rgb(109, 109, 110), -1px 1px 10px rgb(109, 109, 110);
 }
