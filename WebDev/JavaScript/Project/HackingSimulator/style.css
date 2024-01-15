@@ -5,7 +5,7 @@
     margin: 0;
 }
 
-body {
+* {
     background-color: black;
     color: green;
     font-family: 'Anonymous Pro', monospace;
@@ -39,9 +39,11 @@ h1 {
 
 .btn button {
     padding: 5px;
-    border: 2px solid greenyellow;
+    border: 2px solid green;
     border-radius: 5px;
-    background-color: green;
+    background-color: black;
+    color: green;
+    cursor: pointer;
 }
 
 .place {    

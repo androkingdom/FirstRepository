@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        
+        .container {
+            display: flex;
+            border-radius: 10px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 30%;
+            list-style: none;
+        }
+
+        .CompanyName {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #222; 
+        }
+            
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <ul>
+                <li class="CompanyName">
+                    <%= CompanyName %>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box2">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Oswald:wght@500&family=Poppins:wght@300;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Anonymous Pro', monospace;
+            font-family: 'Oswald', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background: hsl(352.58deg 100% 80.98%);
+            background: linear-gradient(to bottom right, hsl(352.58deg 100% 80.98%) 0%, hsl(352.58deg 100% 80.98%) 40%, hsl(352.58deg 100% 80.98%) 52%, hsl(352.58deg 100% 80.98%) 65%, rgba(233, 97, 251, 1) 95%);
+            background-repeat: no-repeat;
+        }
+
+        /* .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; */
+        /* } */
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 240px;
+            height: 450px;
+            background-color: white;
+            box-shadow: 10px 10px 20px rgb(136 77 102), -10px 10px 20px rgb(136 77 102);
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .img img {
+            width: 240px;
+            object-fit: contain;
+        }
+
+        .profilePic {
+            position: relative;
+            top: -50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 70px;
+            height: 80px;
+            border-radius: 50px;
+            box-shadow: 1px 1px 10px rgb(109, 109, 110), -1px 1px 10px rgb(109, 109, 110);
+        }
+
+        .profilePic img {
+            width: 50px;
+            object-fit: contain;
+        }
+
+        .info {
+            position: relative;
+            top: -50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .name span {
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        .follows {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .followers,
+        .following {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .blue-bold {
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgb(0 150 255);
+        }
+
+        .light-small {
+            font-size: 15px;
+            font-weight: lighter;
+            color: rgb(203 193 181);
+        }
+
+        .followMe {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            cursor: pointer;
+            border: none;
+            background-color: hsl(47.69deg 100% 55.1%);
+            padding: 10px 50px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+
+        .allCards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="allCards">
+        <div class="container">
+            <div class="box">
+                <div class="img">
+                    <img src="https://i.pinimg.com/564x/c7/57/b9/c757b95adf617a20ea8cb82a5c35967e.jpg" alt="">
+                </div>
+
+                <div class="profilePic">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png" alt="img">
+                </div>
+
+                <div class="info">
+                    <div class="name">
+                        <span>
+                            <%= Name %>
+                        </span>
+                        <div class="designation light-small">Frontend Developer</div>
+                    </div>
+
+                    <div class="follows">
+                        <div class="followers">
+                            <div class="blue-bold">12</div>
+                            <div class="light-small">Followers</div>
+                        </div>
+
+                        <div class="following">
+                            <div class="blue-bold">1000</div>
+                            <div class="light-small">Following</div>
+                        </div>
+
+                        <div class="followMe">
+                            <button class="btn">Follow</button>
+                        </div>
+                    </div>
+
+                    <div class="description"></div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script>
+        let btn = document.querySelector(".btn")
+
+        let followMe = btn.addEventListener("click", () => {
+            console.log("not work")
+            window.open("https://github.com/androkingdom/")
+        })
+
+    </script>
+</body>
+
+</html>
