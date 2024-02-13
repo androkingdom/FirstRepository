@@ -38,5 +38,5 @@ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 > Add tailwindcss in html by adding css file in`<head>`
 
 ```
- <link rel="stylesheet" href="./output.css">
+ <link rel="stylesheet" href="src/output.css">
 ```
